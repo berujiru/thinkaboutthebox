@@ -7,7 +7,7 @@
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
-	<title>Check Out</title>
+	<title>Order</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
@@ -91,8 +91,8 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Fresh and Organic</p>
-						<h1>Check Out Product</h1>
+						<p>We sale fresh fruits</p>
+						<h1>About Us</h1>
 					</div>
 				</div>
 			</div>
@@ -100,115 +100,180 @@
 	</div>
 	<!-- end breadcrumb section -->
 
-	<!-- check out section -->
-	<div class="checkout-section mt-150 mb-150">
+	<!-- featured section -->
+	<div class="feature-bg">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8">
-					<div class="checkout-accordion-wrap">
-						<div class="accordion" id="accordionExample">
-							<form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-		                        @csrf		                       
-								
-
-								<div class="card single-accordion">
-									<div class="card-header" id="headingTwo">
-									  <h5 class="mb-0">
-									    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-									      Shipping Address
-									    </button>
-									  </h5>
+				<div class="col-lg-7">
+					<div class="featured-text">
+						<h2 class="pb-3">Why <span class="orange-text">Fruitkha</span></h2>
+						<div class="row">
+							<div class="col-lg-6 col-md-6 mb-4 mb-md-5">
+								<div class="list-box d-flex">
+									<div class="list-icon">
+										<i class="fas fa-shipping-fast"></i>
 									</div>
-									<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
-									  <div class="card-body">
-									    <div class="shipping-address-form">
-									    	<h3>Make <span class="orange-text">sure</span> shipping address is correct!</h3>
-									    	
-									    		<p><input type="text" placeholder="Name" required></p>
-									    		<p><textarea name="bill" id="bill" cols="30" rows="10" placeholder="Address"></textarea></p>
-									    	
-									    </div>
-									  </div>
+									<div class="content">
+										<h3>Home Delivery</h3>
+										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
 									</div>
 								</div>
-								<div class="card single-accordion">
-									<div class="card-header" id="headingOne">
-									  <h5 class="mb-0">
-									    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-									      Billing Address
-									    </button>
-									  </h5>
+							</div>
+							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
+								<div class="list-box d-flex">
+									<div class="list-icon">
+										<i class="fas fa-money-bill-alt"></i>
 									</div>
-									<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-									  <div class="card-body">
-									    <div class="billing-address-form">
-									    	<h3>We <span class="orange-text">don't</span> need billing information yet</h3>
-									    </div>
-									  </div>
+									<div class="content">
+										<h3>Best Price</h3>
+										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
 									</div>
 								</div>
-
-								<div class="card single-accordion">
-									<div class="card-header" id="headingThree">
-									  <h5 class="mb-0">
-									    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-									      Card Details
-									    </button>
-									  </h5>
+							</div>
+							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
+								<div class="list-box d-flex">
+									<div class="list-icon">
+										<i class="fas fa-briefcase"></i>
 									</div>
-									<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-									  <div class="card-body">
-									    <div class="card-details">
-									    	<h3>We <span class="orange-text">don't</span> need card information yet</h3>
-									    </div>
-									  </div>
+									<div class="content">
+										<h3>Custom Box</h3>
+										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
 									</div>
 								</div>
-								<button class="cart-btn"><i class="fas fa-shopping-cart"></i>Place Order</button>
-		                    </form>
+							</div>
+							<div class="col-lg-6 col-md-6">
+								<div class="list-box d-flex">
+									<div class="list-icon">
+										<i class="fas fa-sync-alt"></i>
+									</div>
+									<div class="content">
+										<h3>Quick Refund</h3>
+										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+									</div>
+								</div>
+							</div>
 						</div>
-
-					</div>
-				</div>
-
-				<div class="col-lg-4">
-					<div class="order-details-wrap">
-						<table class="order-details">
-							<thead>
-								<tr>
-									<th>Your order Details</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody class="order-details-body">
-								@foreach ($cartItems as $item)
-								<tr>
-									<td><img src="{{ $item->attributes->image }}"  height="20px" alt=""> {{ $item->name }}</td>
-									<td>₱ {{ $item->price * $item->quantity}}</td>
-								</tr>
-								@endforeach 
-							</tbody>
-							<tbody class="checkout-details" style="border:1.5px solid black;">
-								<tr>
-									<td>Subtotal</td>
-									<td><b>₱ {{ Cart::getSubTotal() }}</b></td>
-								</tr>
-								<tr>
-									<td>Shipping</td>
-									<td><b>₱ 0</b></td>
-								</tr>
-								<tr>
-									<td>Total</td>
-									<td><b>₱ {{ Cart::getTotal() }}</b></td>
-								</tr>
-							</tbody>
-						</table>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end check out section -->
+	<!-- end featured section -->
+
+	<!-- shop banner -->
+	<section class="shop-banner">
+    	<div class="container">
+        	<h3>December sale is on! <br> with big <span class="orange-text">Discount...</span></h3>
+            <div class="sale-percent"><span>Sale! <br> Upto</span>50% <span>off</span></div>
+            <a href="shop.html" class="cart-btn btn-lg">Shop Now</a>
+        </div>
+    </section>
+	<!-- end shop banner -->
+
+	<!-- team section -->
+	<div class="mt-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">
+						<h3>Our <span class="orange-text">Team</span></h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="single-team-item">
+						<div class="team-bg team-bg-1"></div>
+						<h4>Bergel <span>Founder & Developer</span></h4>
+						<ul class="social-link-team">
+							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="single-team-item">
+						<div class="team-bg team-bg-2"></div>
+						<h4>Eden <span>CEO & Developer</span></h4>
+						<ul class="social-link-team">
+							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
+					<div class="single-team-item">
+						<div class="team-bg team-bg-3"></div>
+						<h4>Simon Joe <span>Farmer</span></h4>
+						<ul class="social-link-team">
+							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end team section -->
+
+	<!-- testimonail-section -->
+	<div class="testimonail-section mt-80 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1 text-center">
+					<div class="testimonial-sliders">
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="assets/img/avaters/avatar1.png" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>Saira Hakim <span>Local shop owner</span></h3>
+								<p class="testimonial-body">
+									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+								</p>
+								<div class="last-icon">
+									<i class="fas fa-quote-right"></i>
+								</div>
+							</div>
+						</div>
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="assets/img/avaters/avatar2.png" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>David Niph <span>Local shop owner</span></h3>
+								<p class="testimonial-body">
+									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+								</p>
+								<div class="last-icon">
+									<i class="fas fa-quote-right"></i>
+								</div>
+							</div>
+						</div>
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="assets/img/avaters/avatar3.png" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>Jacob Sikim <span>Local shop owner</span></h3>
+								<p class="testimonial-body">
+									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+								</p>
+								<div class="last-icon">
+									<i class="fas fa-quote-right"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end testimonail-section -->
 
 	<!-- logo carousel -->
 	<div class="logo-carousel-section">
